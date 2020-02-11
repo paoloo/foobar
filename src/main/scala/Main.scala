@@ -26,7 +26,7 @@ object Main extends App {
         complete(HttpEntity(ContentTypes.`application/json`,  "{\"status\":\"ok\"}"))
       }
     } ~ path("version") {
-        get {
+      get {
           complete(HttpEntity(ContentTypes.`application/json`, "{\"status\":\"ok\", \"version\":1.0, \"commit\":\"" + c_id + "\"}"))
         }
     } ~ path("delay" / Segment) { delay =>

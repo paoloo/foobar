@@ -4,9 +4,16 @@ version := "0.1"
 
 scalaVersion := "2.12.6"
 
+maintainer := "paolo@firstfoundry.co"
+
 val akkaVersion = "2.5.13"
 val akkaHttpVersion = "10.1.3"
 val circeVersion = "0.9.3"
+
+enablePlugins(UniversalPlugin)
+enablePlugins(JavaAppPackaging)
+packageName in Universal:= "deployment"
+publishArtifact in (Compile, packageDoc) := false
 
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % akkaVersion,
